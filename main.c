@@ -21,14 +21,13 @@ int listdir(const char *path)
 }
 
 int main(int argc, char **argv) {
-  int counter = 1;
 
   if (argc == 1)
 	listdir(".");
 
-  while (counter++ <= argc) {
-    printf("\nListing %s...\n", argv[counter-1]);
-    listdir(argv[counter-1]);
+  for (int i = 1; i < argc; i++) {
+      printf("\nListing %s...\n", argv[i]);
+      listdir(argv[i]);
   }
 
   return 0;
